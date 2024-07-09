@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8d332f5-ffa3-4962-8e04-00797a89da76" name="변경" comment="20240708 14:00">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adventure_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/adventure_game.py" afterDir="false" />
-    </list>
+    <list default="true" id="a8d332f5-ffa3-4962-8e04-00797a89da76" name="변경" comment="20240708 15:40 버튼위치수정필요" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,7 +90,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720414880068</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="20240708 15:40 버튼위치수정필요">
+      <option name="closed" value="true" />
+      <created>1720421019063</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1720421019063</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -123,6 +128,7 @@
     <MESSAGE value="20240704 08:50" />
     <MESSAGE value="20240705 08:30" />
     <MESSAGE value="20240708 14:00" />
-    <option name="LAST_COMMIT_MESSAGE" value="20240708 14:00" />
+    <MESSAGE value="20240708 15:40 버튼위치수정필요" />
+    <option name="LAST_COMMIT_MESSAGE" value="20240708 15:40 버튼위치수정필요" />
   </component>
 </project>
