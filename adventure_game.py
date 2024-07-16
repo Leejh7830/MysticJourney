@@ -16,7 +16,7 @@ def adventure_game(root):
     game_window.title("Adventure Game")
     game_window.geometry("400x300")
 
-    player = Character()  # 주인공 상태 초기화
+    player = Character()  # 상태 초기화
     log_message("Initialize character state")
 
     def update_message(message):
