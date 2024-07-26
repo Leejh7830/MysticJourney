@@ -100,4 +100,4 @@ if __name__ == "__main__":
     adventure_game(root)
     root.mainloop()
 
-#test
+#tes
