@@ -1,6 +1,7 @@
 import tkinter as tk
 from character import Character
 from monster import load_monsters_from_json
+from item import load_items_from_json
 from events import BattleEvent, ItemFoundEvent
 
 class GameApp:
@@ -25,15 +26,17 @@ class GameApp:
 
         try:
             self.monsters = load_monsters_from_json('monsters.json')
+            self.hero.monsters = self.monsters  # hero 객체에 monsters 할당
+            self.items = load_items_from_json('items.json')
         except FileNotFoundError as e:
             print(e)
             self.root.destroy()
             return
 
         self.events = [
-            ItemFoundEvent(item="검"),
-            BattleEvent(enemy=self.monsters[2]),  # 늑대와의 전투
-            ItemFoundEvent(item="회복 물약")
+            ItemFoundEvent(items=self.items),
+            BattleEvent(grade=2),  # 2등급 몬스터와의 전투
+            ItemFoundEvent(items=self.items)
         ]
         self.current_event_index = 0
 

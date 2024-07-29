@@ -1,78 +1,57 @@
-import tkinter as tk
+import random
 
-class Event:
-    def trigger(self, character, root, output_text, option_buttons, next_event_callback):
-        raise NotImplementedError("Subclasses should implement this!")
+class BattleEvent:
+    def __init__(self, grade, monsters):
+        self.grade = grade
+        self.monsters = monsters
 
-class BattleEvent(Event):
-    def __init__(self, enemy):
-        self.enemy = enemy
+    def trigger(self, hero, root, output_text, option_buttons, next_event_callback):
+        eligible_monsters = [monster for monster in self.monsters if monster.grade == self.grade]
+        enemy = random.choice(eligible_monsters)
 
-    def trigger(self, character, root, output_text, option_buttons, next_event_callback):
-        self.character = character
-        self.output_text = output_text
-        self.option_buttons = option_buttons
-        self.next_event_callback = next_event_callback
-        self.output_text.set(f"야생의 {self.enemy.name}(이)가 나타났다! (등급: {self.enemy.grade})")
+        output_text.set(f"{enemy.name}와(과) 전투가 시작됩니다!")
 
-        self.update_options([("공격하기", self.attack), ("도망치기", self.run_away)])
-
-    def attack(self):
-        self.character.attack(self.enemy)
-        if self.enemy.health > 0:
-            self.enemy.attack(self.character)
-            if self.character.health > 0:
-                self.output_text.set(f"{self.enemy.name}(이)가 {self.character.name}을 공격했습니다!")
+        def attack():
+            enemy.attack(hero)
+            if hero.health > 0:
+                hero.attack(enemy)
+                if enemy.health <= 0:
+                    output_text.set(f"{enemy.name}을(를) 물리쳤습니다!")
+                    for button in option_buttons:
+                        button.pack_forget()
+                    next_event_callback()
+                else:
+                    output_text.set(f"{enemy.name}의 체력: {enemy.health}")
             else:
-                self.output_text.set(f"{self.character.name}이(가) {self.enemy.name}에게 패배했습니다...")
-                self.update_options([])
-                self.next_event_callback()
-        else:
-            self.output_text.set(f"{self.character.name}이(가) {self.enemy.name}을 물리쳤습니다!")
-            self.update_options([])
-            self.next_event_callback()
+                output_text.set("영웅이 쓰러졌습니다...")
+                for button in option_buttons:
+                    button.pack_forget()
 
-    def run_away(self):
-        self.output_text.set(f"{self.character.name}이(가) 도망쳤습니다!")
-        self.update_options([])
-        self.next_event_callback()
-
-    def update_options(self, options):
-        for button in self.option_buttons:
-            button.pack_forget()
-        for i, (text, command) in enumerate(options):
-            button = self.option_buttons[i]
-            button.config(text=text, command=command)
+        for i, button in enumerate(option_buttons):
+            button.config(text="공격", command=attack)
             button.pack()
 
-class ItemFoundEvent(Event):
-    def __init__(self, item):
-        self.item = item
+class ItemFoundEvent:
+    def __init__(self, items):
+        self.items = items
 
-    def trigger(self, character, root, output_text, option_buttons, next_event_callback):
-        self.character = character
-        self.output_text = output_text
-        self.option_buttons = option_buttons
-        self.next_event_callback = next_event_callback
-        self.output_text.set(f"{self.character.name}이(가) {self.item}을(를) 발견했습니다!")
+    def trigger(self, hero, root, output_text, option_buttons, next_event_callback):
+        item = random.choice(self.items)
+        output_text.set(f"{hero.name}이(가) {item.name}을(를) 발견했습니다! ({item.category})")
 
-        self.update_options([("줍기", self.pick_item), ("버리기", self.leave_item)])
+        def pick_item():
+            output_text.set(f"{item.name}을(를) 주웠습니다!")
+            for button in option_buttons:
+                button.pack_forget()
+            next_event_callback()
 
-    def pick_item(self):
-        self.character.pick_item(self.item)
-        self.output_text.set(f"{self.character.name}이(가) {self.item}을(를) 주웠습니다!")
-        self.update_options([])
-        self.next_event_callback()
+        def leave_item():
+            output_text.set(f"{item.name}을(를) 버렸습니다!")
+            for button in option_buttons:
+                button.pack_forget()
+            next_event_callback()
 
-    def leave_item(self):
-        self.output_text.set(f"{self.character.name}이(가) {self.item}을(를) 버렸습니다.")
-        self.update_options([])
-        self.next_event_callback()
-
-    def update_options(self, options):
-        for button in self.option_buttons:
-            button.pack_forget()
-        for i, (text, command) in enumerate(options):
-            button = self.option_buttons[i]
-            button.config(text=text, command=command)
-            button.pack()
+        option_buttons[0].config(text="줍기", command=pick_item)
+        option_buttons[1].config(text="버리기", command=leave_item)
+        option_buttons[0].pack()
+        option_buttons[1].pack()
