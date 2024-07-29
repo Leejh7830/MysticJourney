@@ -99,5 +99,3 @@ if __name__ == "__main__":
     root.protocol("WM_DELETE_WINDOW", lambda: on_closing(root))
     adventure_game(root)
     root.mainloop()
-
-#tes
