@@ -1,21 +1,16 @@
+import random
+
 class Character:
-    def __init__(self, name, health, attack_power):
+    def __init__(self, name, health, attack_power, image_path=None):
         self.name = name
         self.health = health
         self.attack_power = attack_power
-        self.inventory = []
+        self.image_path = image_path
 
-    def attack(self, target):
-        print(f"{self.name} attacks {target.name} for {self.attack_power} damage.")
-        target.take_damage(self.attack_power)
+    def attack(self, other):
+        damage = random.randint(1, self.attack_power)
+        other.health -= damage
+        return damage
 
-    def take_damage(self, damage):
-        self.health -= damage
-        print(f"{self.name} takes {damage} damage and now has {self.health} health.")
-
-    def pick_item(self, item):
-        self.inventory.append(item)
-        print(f"{self.name} picked up {item}.")
-
-    def show_inventory(self):
-        print(f"{self.name}'s Inventory: {', '.join(self.inventory) if self.inventory else 'Empty'}")
+    def __repr__(self):
+        return f"Character(name={self.name}, health={self.health}, attack_power={self.attack_power})"

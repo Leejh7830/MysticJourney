@@ -4,10 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8d332f5-ffa3-4962-8e04-00797a89da76" name="변경" comment="20240729 11:30&#10;json 추가 (몬스터, 아이템)&#10;이미지 추가 전">
-      <change afterPath="$PROJECT_DIR$/battle.py" afterDir="false" />
+    <list default="true" id="a8d332f5-ffa3-4962-8e04-00797a89da76" name="변경" comment="20240730 09:30">
+      <change afterPath="$PROJECT_DIR$/resources/Hero/hero_base.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Hero/hero_onehandsword.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Monster/가고일.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Monster/고블린로드.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Monster/노움.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Monster/늑대.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Monster/데몬로드.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Monster/듀라한.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Monster/레드드래곤.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Monster/루시퍼.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Monster/뱀파이어로드.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Monster/베히모스.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Monster/벨제부브.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Monster/블랙드래곤.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Monster/슬라임킹.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Monster/아라크네.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Monster/오우거.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Monster/와이번.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Monster/임프.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Monster/지옥의군주.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Monster/트롤.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Monster/헬하운드.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/items.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/monsters.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/monsters.json" beforeDir="false" afterPath="$PROJECT_DIR$/monsters.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adventure_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/adventure_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/battle.py" beforeDir="false" afterPath="$PROJECT_DIR$/battle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/character.py" beforeDir="false" afterPath="$PROJECT_DIR$/character.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events.py" beforeDir="false" afterPath="$PROJECT_DIR$/events.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/items.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/monster.py" beforeDir="false" afterPath="$PROJECT_DIR$/monster.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/monsters.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +238,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722220497849</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="20240730 09:30">
+      <option name="closed" value="true" />
+      <created>1722299067991</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1722299067991</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -252,6 +289,7 @@
     <MESSAGE value="20240729 09:30" />
     <MESSAGE value="20240729 11:00 RESET" />
     <MESSAGE value="20240729 11:30&#10;json 추가 (몬스터, 아이템)&#10;이미지 추가 전" />
-    <option name="LAST_COMMIT_MESSAGE" value="20240729 11:30&#10;json 추가 (몬스터, 아이템)&#10;이미지 추가 전" />
+    <MESSAGE value="20240730 09:30" />
+    <option name="LAST_COMMIT_MESSAGE" value="20240730 09:30" />
   </component>
 </project>
